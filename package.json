@@ -1,6 +1,5 @@
 {
   "name": "nestjs",
-  "version": "0.0.0",
   "private": "true",
   "description": "",
   "keywords": [],
@@ -9,7 +8,9 @@
   "main": "index.js",
   "scripts": {
     "commit": "cz",
-    "prep-release": "pnpm changeset",
+    "prep-release": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish",
     "test": "vitest",
     "test:ci": "vitest --run",
     "lint": "oxlint .",

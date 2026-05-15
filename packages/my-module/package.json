@@ -1,6 +1,6 @@
 {
   "name": "@ryanzeng/nestjs-my-module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "files": [
     "lib"
   ],
@@ -10,7 +10,6 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
-    "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
