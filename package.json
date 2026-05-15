@@ -14,7 +14,8 @@
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt .",
-    "format:check": "oxfmt --check ."
+    "format:check": "oxfmt --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.1",
