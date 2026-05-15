@@ -1,6 +1,6 @@
 {
   "name": "nestjs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": "true",
   "description": "",
   "keywords": [],
@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "commit": "cz",
+    "release": "standard-version",
     "test": "vitest",
     "test:ci": "vitest --run",
     "lint": "oxlint .",
@@ -27,6 +28,7 @@
     "lint-staged": "^17.0.4",
     "oxfmt": "^0.49.0",
     "oxlint": "^1.64.0",
+    "standard-version": "^9.5.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6"
   },
