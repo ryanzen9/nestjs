@@ -1,5 +1,6 @@
 {
   "name": "nestjs",
+  "version": "0.0.0",
   "private": "true",
   "description": "",
   "keywords": [],
@@ -23,6 +24,7 @@
     "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
+    "@types/node": "^25.8.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",

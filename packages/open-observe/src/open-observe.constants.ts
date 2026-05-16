@@ -1,0 +1,3 @@
+export const OPEN_OBSERVE_CONFIG = Symbol("OPEN_OBSERVE_CONFIG");
+
+export const OPEN_OBSERVE_LOGGER = Symbol("OPEN_OBSERVE_LOGGER");

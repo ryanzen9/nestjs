@@ -3,12 +3,10 @@
  */
 
 export interface OpenObserveConfig {
-  observerUsername: string;
-  observerPassword: string;
   observerTraceUrl: string;
-  observerTraceToken: string;
-  observerHostOpt: string;
-  observerPortOpt: string;
   observerScope: string;
-  observerServerName: string;
+  observerStream: string;
+  observerUsername?: string;
+  observerPassword?: string;
+  observerTraceToken?: string;
 }
