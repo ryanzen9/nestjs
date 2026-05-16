@@ -6,8 +6,10 @@ import { OpenObserveConfig } from "./open-observe.interfaces";
 export class OBLogger implements LoggerService {
   constructor(@InjectOpenObserveConfig() private readonly config: OpenObserveConfig) {}
 
-  private formatMessage(level: string, message: string): string {
-    return `[${level.toUpperCase()}] [${new Date().toISOString()}] ${message}`;
+  private formatMessage(level: string, message: any): string {
+    return typeof message === "string"
+      ? `[${level.toUpperCase()}] [${new Date().toISOString()}] ${message}`
+      : JSON.stringify(message);
   }
 
   private sendLogs(logs: any[]) {
@@ -63,11 +65,13 @@ export class OBLogger implements LoggerService {
   ): void {
     const logEntry: any = {
       level,
-      message:
-        typeof message === "string" ? this.formatMessage(level, message) : JSON.stringify(message),
-      context: context || "Logger",
+      message: typeof message === "string" ? message : JSON.stringify(message),
       "@timestamp": new Date().toISOString(),
     };
+
+    if (context) {
+      logEntry.context = context;
+    }
     if (trace) {
       logEntry.trace = trace;
     }
@@ -80,27 +84,32 @@ export class OBLogger implements LoggerService {
   }
 
   log(message: any, context?: string, ...arg: any): void {
-    this.logToObserve("info", message, context, undefined, ...arg);
-    Logger.log(message, context); // Also log to console
+    const msg = this.formatMessage("info", message);
+    this.logToObserve("info", msg, context, undefined, ...arg);
+    Logger.log(msg, context ?? "Logger"); // Also log to console
   }
 
   error(message: any, trace?: string, context?: string, ...arg: any): void {
-    this.logToObserve("error", message, context, trace, ...arg);
-    Logger.error(message, trace, context); // Also log to console
+    const msg = this.formatMessage("error", message);
+    this.logToObserve("error", msg, context, trace, ...arg);
+    Logger.error(msg, trace, context ?? "Logger"); // Also log to console
   }
 
   warn(message: any, context?: string, ...arg: any): void {
-    this.logToObserve("warn", message, context, undefined, ...arg);
-    Logger.warn(message, context); // Also log to console
+    const msg = this.formatMessage("warn", message);
+    this.logToObserve("warn", msg, context, undefined, ...arg);
+    Logger.warn(msg, context ?? "Logger"); // Also log to console
   }
 
   debug(message: any, context?: string, ...arg: any): void {
-    this.logToObserve("debug", message, context, undefined, ...arg);
-    Logger.debug(message, context); // Also log to console
+    const msg = this.formatMessage("debug", message);
+    this.logToObserve("debug", msg, context, undefined, ...arg);
+    Logger.debug(msg, context ?? "Logger"); // Also log to console
   }
 
   verbose(message: any, context?: string, ...arg: any): void {
-    this.logToObserve("verbose", message, context, undefined, ...arg);
-    Logger.verbose(message, context); // Also log to console
+    const msg = this.formatMessage("verbose", message);
+    this.logToObserve("verbose", msg, context, undefined, ...arg);
+    Logger.verbose(msg, context ?? "Logger"); // Also log to console
   }
 }
