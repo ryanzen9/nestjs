@@ -10,7 +10,7 @@
   "scripts": {
     "commit": "cz",
     "prep-release": "changeset",
-    "version": "changeset version",
+    "prep-version": "changeset version",
     "release": "changeset publish",
     "test": "vitest",
     "test:ci": "vitest --run",
