@@ -1,5 +1,11 @@
 # nestjs-open-observe
 
+## 1.0.2
+
+### Patch Changes
+
+- 88359fc: 更新库构建工具 为 tsdown
+
 ## 1.0.1
 
 ### Patch Changes
