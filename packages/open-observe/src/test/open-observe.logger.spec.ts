@@ -1,5 +1,5 @@
 import { describe, it } from "vitest";
-import { OpenObserveConfig } from "../open-observe.interfaces";
+import { type OpenObserveConfig } from "../open-observe.interfaces";
 import { OBLogger } from "../open-observe.logger";
 
 const mockConfig = (): OpenObserveConfig => ({

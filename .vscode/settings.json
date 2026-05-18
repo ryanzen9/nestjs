@@ -5,5 +5,28 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSaveMode": "file",
-  "js/ts.tsdk.path": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use Conventional Commits format"
+    },
+    {
+      "text": "Use Chinese"
+    },
+    {
+      "text": "Subject line max 72 chars"
+    },
+    {
+      "text": "Include a body if the commit is not self-explanatory"
+    },
+    {
+      "text": "Use the following format: <type>(<scope>): <subject>"
+    },
+    {
+      "text": "Where type is one of: feat, fix, docs, style, refactor, perf, test, chore"
+    },
+    {
+      "text": "Where scope is optional and can be anything specifying the area of the code affected"
+    }
+  ]
 }

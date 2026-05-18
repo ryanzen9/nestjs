@@ -1,7 +1,7 @@
 import { Logger, LoggerService } from "@nestjs/common";
 import { catchError, from, of, tap } from "rxjs";
 import { InjectOpenObserveConfig } from "./open-observe.decorators";
-import { OpenObserveConfig } from "./open-observe.interfaces";
+import { type OpenObserveConfig } from "./open-observe.interfaces";
 
 export class OBLogger implements LoggerService {
   constructor(@InjectOpenObserveConfig() private readonly config: OpenObserveConfig) {}

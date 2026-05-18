@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
 import { OPEN_OBSERVE_CONFIG, OPEN_OBSERVE_LOGGER } from "./open-observe.constants";
-import { OpenObserveConfig } from "./open-observe.interfaces";
+import { type OpenObserveConfig } from "./open-observe.interfaces";
 import { OBLogger } from "./open-observe.logger";
 
 @Module({})
